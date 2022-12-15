@@ -11,3 +11,5 @@ async function loadFixtures(clearData = false) {
         {id: 2,title : 'Programming'}
     ])
 }
+
+export default loadFixtures

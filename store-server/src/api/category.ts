@@ -14,7 +14,7 @@ category.get('/',async (ctx, next) => {
     
     category
         .get('/',async (ctx,next) => {
-            ctx.body = makeQuery().orderBy('id')
+            ctx.body = await makeQuery().orderBy('id')
         })
         .get('/:id',async (ctx,next) =>{
             const id = parseInt(ctx.params.id)
