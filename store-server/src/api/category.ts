@@ -1,12 +1,11 @@
 import Router from 'koa-router'
-const router = new Router()
+const category = new Router()
 
 
-router
-    .get('/',async (ctx, next) => {
+category.get('/',async (ctx, next) => {
         ctx.body = [
-            {
-                title: 'Fantasy'
-            }
+                {id: 1, title: 'Drama'}
         ]
     })
+
+    export default category
