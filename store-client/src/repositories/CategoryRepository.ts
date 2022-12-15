@@ -29,6 +29,4 @@ export class CategoryRepository implements IRepository<Category> {
         const result = await axios.delete<Category>(`${this.urlPrefix}/category/${id}`)
         console.log(result.data)
     }
-
-    
 }
