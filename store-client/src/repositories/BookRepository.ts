@@ -3,7 +3,6 @@ import { IRepository } from "./IRepository";
 import axios from "axios";
 import config from "../config";
 
-
 export class BookRepository implements IRepository<Book> {
     urlPrefix = config.remoteRepositoryUrlPrefix
 
