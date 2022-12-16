@@ -3,11 +3,17 @@ import { IRepository } from "./IRepository";
 import axios from "axios";
 import config from "../config";
 
+interface BookFilter {
+    categoryId: string
+}
 export class BookRepository implements IRepository<Book> {
     urlPrefix = config.remoteRepositoryUrlPrefix
 
-    async getAll(): Promise<Book[] | null> {
-        const result = await axios.get<Book[]>(`${this.urlPrefix}/book`)
+    async getAll(filter: BookFilter): Promise<Book[] | null> {
+        const params = {
+            categoryId: filter.categoryId
+        }
+        const result = await axios.get<Book[]>(`${this.urlPrefix}/book`,{params})
         return result.data
     }
     async get(id: number|string): Promise<Book | null>{
