@@ -11,9 +11,7 @@ const app = new Koa()
 app.use(json())
 app.use(cors())
 app.use(koaBody())
-
 app.use(apiRounter.routes())
-
 app.listen(8000)
 
 loadFixtures(appConfig.clearDataBeforeLoadingFixture)
